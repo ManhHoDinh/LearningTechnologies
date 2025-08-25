@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: app-with-data
+spec:
+  containers:
+  - name: app
+    image: busybox
+    command: ["sh","-c","echo 'hello' >> /data/hello.txt && sleep 3600"]
+    volumeMounts:
+    - name: app-data
+      mountPath: /data
+  volumes:
+  - name: app-data
+    persistentVolumeClaim:
+      claimName: data-pvc

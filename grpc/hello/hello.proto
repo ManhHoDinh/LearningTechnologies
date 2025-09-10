@@ -4,7 +4,17 @@ option go_package = "example.com/hello/hello;hello";
 
 service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply);
+  rpc GreetMany (GreetManyRequest) returns (stream GreetChunk); // NEW
+  rpc UploadNames (stream Name) returns (Summary); // NEW
+  rpc Chat (stream ChatMsg) returns (stream ChatMsg);
 }
 
 message HelloRequest { string name = 1; }
 message HelloReply   { string message = 1; }
+
+message GreetManyRequest { string name = 1; } // NEW
+message GreetChunk       { string message = 1; } // NEW
+
+message Name { string value = 1; }
+message Summary { int32 count = 1; }
+message ChatMsg { string text = 1; }

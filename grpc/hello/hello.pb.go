@@ -109,6 +109,226 @@ func (x *HelloReply) GetMessage() string {
 	return ""
 }
 
+type GreetManyRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GreetManyRequest) Reset() {
+	*x = GreetManyRequest{}
+	mi := &file_hello_hello_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GreetManyRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GreetManyRequest) ProtoMessage() {}
+
+func (x *GreetManyRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_hello_hello_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GreetManyRequest.ProtoReflect.Descriptor instead.
+func (*GreetManyRequest) Descriptor() ([]byte, []int) {
+	return file_hello_hello_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *GreetManyRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type GreetChunk struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Message       string                 `protobuf:"bytes,1,opt,name=message,proto3" json:"message,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *GreetChunk) Reset() {
+	*x = GreetChunk{}
+	mi := &file_hello_hello_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *GreetChunk) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*GreetChunk) ProtoMessage() {}
+
+func (x *GreetChunk) ProtoReflect() protoreflect.Message {
+	mi := &file_hello_hello_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use GreetChunk.ProtoReflect.Descriptor instead.
+func (*GreetChunk) Descriptor() ([]byte, []int) {
+	return file_hello_hello_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *GreetChunk) GetMessage() string {
+	if x != nil {
+		return x.Message
+	}
+	return ""
+}
+
+type Name struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Value         string                 `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Name) Reset() {
+	*x = Name{}
+	mi := &file_hello_hello_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Name) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Name) ProtoMessage() {}
+
+func (x *Name) ProtoReflect() protoreflect.Message {
+	mi := &file_hello_hello_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Name.ProtoReflect.Descriptor instead.
+func (*Name) Descriptor() ([]byte, []int) {
+	return file_hello_hello_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *Name) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+type Summary struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Count         int32                  `protobuf:"varint,1,opt,name=count,proto3" json:"count,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *Summary) Reset() {
+	*x = Summary{}
+	mi := &file_hello_hello_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *Summary) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Summary) ProtoMessage() {}
+
+func (x *Summary) ProtoReflect() protoreflect.Message {
+	mi := &file_hello_hello_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Summary.ProtoReflect.Descriptor instead.
+func (*Summary) Descriptor() ([]byte, []int) {
+	return file_hello_hello_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *Summary) GetCount() int32 {
+	if x != nil {
+		return x.Count
+	}
+	return 0
+}
+
+type ChatMsg struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Text          string                 `protobuf:"bytes,1,opt,name=text,proto3" json:"text,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ChatMsg) Reset() {
+	*x = ChatMsg{}
+	mi := &file_hello_hello_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ChatMsg) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ChatMsg) ProtoMessage() {}
+
+func (x *ChatMsg) ProtoReflect() protoreflect.Message {
+	mi := &file_hello_hello_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ChatMsg.ProtoReflect.Descriptor instead.
+func (*ChatMsg) Descriptor() ([]byte, []int) {
+	return file_hello_hello_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *ChatMsg) GetText() string {
+	if x != nil {
+		return x.Text
+	}
+	return ""
+}
+
 var File_hello_hello_proto protoreflect.FileDescriptor
 
 const file_hello_hello_proto_rawDesc = "" +
@@ -118,9 +338,23 @@ const file_hello_hello_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"&\n" +
 	"\n" +
 	"HelloReply\x12\x18\n" +
-	"\amessage\x18\x01 \x01(\tR\amessage2=\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"&\n" +
+	"\x10GreetManyRequest\x12\x12\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\"&\n" +
+	"\n" +
+	"GreetChunk\x12\x18\n" +
+	"\amessage\x18\x01 \x01(\tR\amessage\"\x1c\n" +
+	"\x04Name\x12\x14\n" +
+	"\x05value\x18\x01 \x01(\tR\x05value\"\x1f\n" +
+	"\aSummary\x12\x14\n" +
+	"\x05count\x18\x01 \x01(\x05R\x05count\"\x1d\n" +
+	"\aChatMsg\x12\x12\n" +
+	"\x04text\x18\x01 \x01(\tR\x04text2\xd2\x01\n" +
 	"\aGreeter\x122\n" +
-	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x11.hello.HelloReplyB\x1fZ\x1dexample.com/hello/hello;hellob\x06proto3"
+	"\bSayHello\x12\x13.hello.HelloRequest\x1a\x11.hello.HelloReply\x129\n" +
+	"\tGreetMany\x12\x17.hello.GreetManyRequest\x1a\x11.hello.GreetChunk0\x01\x12,\n" +
+	"\vUploadNames\x12\v.hello.Name\x1a\x0e.hello.Summary(\x01\x12*\n" +
+	"\x04Chat\x12\x0e.hello.ChatMsg\x1a\x0e.hello.ChatMsg(\x010\x01B\x1fZ\x1dexample.com/hello/hello;hellob\x06proto3"
 
 var (
 	file_hello_hello_proto_rawDescOnce sync.Once
@@ -134,16 +368,27 @@ func file_hello_hello_proto_rawDescGZIP() []byte {
 	return file_hello_hello_proto_rawDescData
 }
 
-var file_hello_hello_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_hello_hello_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_hello_hello_proto_goTypes = []any{
-	(*HelloRequest)(nil), // 0: hello.HelloRequest
-	(*HelloReply)(nil),   // 1: hello.HelloReply
+	(*HelloRequest)(nil),     // 0: hello.HelloRequest
+	(*HelloReply)(nil),       // 1: hello.HelloReply
+	(*GreetManyRequest)(nil), // 2: hello.GreetManyRequest
+	(*GreetChunk)(nil),       // 3: hello.GreetChunk
+	(*Name)(nil),             // 4: hello.Name
+	(*Summary)(nil),          // 5: hello.Summary
+	(*ChatMsg)(nil),          // 6: hello.ChatMsg
 }
 var file_hello_hello_proto_depIdxs = []int32{
 	0, // 0: hello.Greeter.SayHello:input_type -> hello.HelloRequest
-	1, // 1: hello.Greeter.SayHello:output_type -> hello.HelloReply
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: hello.Greeter.GreetMany:input_type -> hello.GreetManyRequest
+	4, // 2: hello.Greeter.UploadNames:input_type -> hello.Name
+	6, // 3: hello.Greeter.Chat:input_type -> hello.ChatMsg
+	1, // 4: hello.Greeter.SayHello:output_type -> hello.HelloReply
+	3, // 5: hello.Greeter.GreetMany:output_type -> hello.GreetChunk
+	5, // 6: hello.Greeter.UploadNames:output_type -> hello.Summary
+	6, // 7: hello.Greeter.Chat:output_type -> hello.ChatMsg
+	4, // [4:8] is the sub-list for method output_type
+	0, // [0:4] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -160,7 +405,7 @@ func file_hello_hello_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_hello_hello_proto_rawDesc), len(file_hello_hello_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

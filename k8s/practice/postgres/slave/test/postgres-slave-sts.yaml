@@ -1,0 +1,68 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres-slave
+  labels:
+    component: postgres-slave
+spec:
+  serviceName: postgres-slave
+  replicas: 3
+  selector:
+    matchLabels:
+      component: postgres-slave
+  template:
+    metadata:
+      labels:
+        component: postgres-slave
+    spec:
+      securityContext:
+        fsGroup: 999
+        runAsUser: 999
+        runAsGroup: 999
+      initContainers:
+        - name: init-standby
+          image: postgres:11
+          env:
+            - name: PGPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-repl-secret
+                  key: password
+          command: ["/bin/sh","-c"]
+          args:
+            - |
+              set -e
+              chmod +x /init/replica-init.sh
+              /init/replica-init.sh
+          volumeMounts:
+            - name: init-scripts
+              mountPath: /init
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+      containers:
+        - name: postgres
+          image: postgres:11
+          ports:
+            - containerPort: 5432
+          env:
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-superuser-secret
+                  key: password
+          volumeMounts:
+            - name: postgres-data
+              mountPath: /var/lib/postgresql/data
+      volumes:
+        - name: init-scripts
+          configMap:
+            name: replica-init-cm
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-data                 # <- mount by this exact name
+      spec:
+        storageClassName: standard          # change if your SC is different
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 5Gi

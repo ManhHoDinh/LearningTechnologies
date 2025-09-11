@@ -1,0 +1,1 @@
+helm install postgresql bitnami/postgresql-ha --set postgresqlPassword=postgres --set replication.password=postgres
